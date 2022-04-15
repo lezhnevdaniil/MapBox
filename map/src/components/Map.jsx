@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import Marker from './Marker';
+import { token } from '../token/token';
 import { Typography } from '@mui/material';
 import { Box } from '@mui/system';
 
@@ -16,8 +17,7 @@ const Map = () => {
     JSON.parse(localStorage.getItem('markers')) || []
   );
 
-  mapboxgl.accessToken =
-    'pk.eyJ1IjoiZGFuaWlsbGV6ZyIsImEiOiJjbDF3OGRsYjYwNmE5M2xvOWt1cjdvdnZlIn0.L0KHFGGCZdeaYkXe4gew6w';
+  mapboxgl.accessToken = token;
 
   useEffect(() => {
     if (map.current) return;
